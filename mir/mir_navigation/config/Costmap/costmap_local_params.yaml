@@ -18,3 +18,6 @@ local_costmap:
       type: "costmap_2d::VoxelLayer"
     - name: inflation
       type: "costmap_2d::InflationLayer"
+    - name: simple_layer 
+      type: "simple_layer_namespace::SimpleLayer" 
+
