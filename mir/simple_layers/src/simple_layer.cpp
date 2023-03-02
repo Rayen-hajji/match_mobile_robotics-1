@@ -45,11 +45,10 @@ void SimpleLayer::updateCosts(costmap_2d::Costmap2D& master_grid, int min_i, int
     unsigned int mx;
     unsigned int my;
     if(master_grid.worldToMap(mark_x_, mark_y_, mx, my)){
-        master_grid.setCost(mx, my, LETHAL_OBSTACLE);
-        // master_grid.setCost(mx, my, FREE_SPACE);
-        ROS_INFO("%d,%d",mx,my);
-        ROS_INFO("%d,%d",mark_x_,mark_y_);
+         master_grid.setCost(mx, my, LETHAL_OBSTACLE);
+         // master_grid.setCost(mx, my, FREE_SPACE);
+         ROS_INFO("%d,%d",mx,my);
+         ROS_INFO("%f,%f",mark_x_,mark_y_);
     }
-}   
 }//end_namespace
-
+}

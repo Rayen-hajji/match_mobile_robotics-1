@@ -1,0 +1,5 @@
+<library path="lib/libarea_layer">
+    <class type="area_layer_namespace::AreaLayer" base_class_type="costmap_2d::Layer">
+        <description>Demo Layer that adds a square arounf the robot the robot</description>
+    </class>
+</library>

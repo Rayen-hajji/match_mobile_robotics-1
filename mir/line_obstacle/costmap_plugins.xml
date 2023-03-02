@@ -1,0 +1,5 @@
+<library path="lib/libobstacle_layer">
+    <class type="obstacle_layer_namespace::ObstacleLayer" base_class_type="costmap_2d::Layer">
+        <description>Demo Layer that adds a line 1 meter in front of the robot</description>
+    </class>
+</library>

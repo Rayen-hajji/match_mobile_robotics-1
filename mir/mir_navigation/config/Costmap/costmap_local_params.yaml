@@ -18,6 +18,10 @@ local_costmap:
       type: "costmap_2d::VoxelLayer"
     - name: inflation
       type: "costmap_2d::InflationLayer"
+    - name: area_layer 
+      type: "area_layer_namespace::AreaLayer"
     - name: simple_layer 
       type: "simple_layer_namespace::SimpleLayer" 
-
+    - name: obstacle_layer 
+      type: "obstacle_layer_namespace::ObstacleLayer" 
+ 
