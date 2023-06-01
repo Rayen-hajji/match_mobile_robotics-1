@@ -1,12 +1,12 @@
 robot_base_frame: $(arg tf_prefix_slashed)base_footprint
 
 ### footprint
-footprint: [[0.506,-0.32],[0.506,0.32],[-0.454,0.32],[-0.454,-0.32]]
+footprint: [[0.506,-0.32],[0.506,0.32],[-0.454,0.32],[-0.454,-0.32]] #original :footprint: [[0.506,-0.32],[0.506,0.32],[-0.454,0.32],[-0.454,-0.32]]
 footprint_padding: 0.0
 
 transform_tolerance: 3.0 #0.4   changed by Malte Heinrich
 update_frequency: 5.0
-publish_frequency: 1.0
+publish_frequency: 3.0 #1.0 changed by rayen
 obstacle_range: 3.0
 #mark_threshold: 1
 publish_voxel_map: true
@@ -14,6 +14,8 @@ navigation_map:
   map_topic: /map
 obstacles:
   observation_sources: b_scan_marking b_scan_clearing f_scan_marking f_scan_clearing
+  # track_unknown_space: false #added by Rayen
+  # combination_method: 99 #added by Rayen
   b_scan_marking:
     topic: b_scan_rep117
     data_type: LaserScan
@@ -21,7 +23,8 @@ obstacles:
     marking: true
     inf_is_valid: false
     min_obstacle_height: 0.13
-    max_obstacle_height: 0.25
+    max_obstacle_height: 0.25 
+    obstacle_range: 20.0
   b_scan_clearing:
     topic: b_scan_rep117
     data_type: LaserScan
@@ -29,7 +32,8 @@ obstacles:
     marking: false
     inf_is_valid: false
     min_obstacle_height: 0.13
-    max_obstacle_height: 0.25
+    max_obstacle_height: 0.25 #
+    raytrace_range: 25.0
   f_scan_marking:
     topic: f_scan_rep117
     data_type: LaserScan
@@ -37,7 +41,8 @@ obstacles:
     marking: true
     inf_is_valid: false
     min_obstacle_height: 0.13
-    max_obstacle_height: 0.25
+    max_obstacle_height: 0.25 #
+    obstacle_range: 20.0
   f_scan_clearing:
     topic: f_scan_rep117
     data_type: LaserScan
@@ -45,7 +50,9 @@ obstacles:
     marking: false
     inf_is_valid: false
     min_obstacle_height: 0.13
-    max_obstacle_height: 0.25
+    max_obstacle_height: 0.25 #
+    raytrace_range: 25.0
 virtual_walls_map:
   map_topic: /virtual_walls/map
   use_maximum: true
+
